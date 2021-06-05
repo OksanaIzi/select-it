@@ -23,7 +23,7 @@ public class TestBase {
         Configuration.startMaximized = true;
         Configuration.browserVersion = driverConfig.webBrowserVersion();
 
-        if (driverConfig.isRemote()) {
+        if (driverConfig.webRemoteDriverUrl()!= null) {
             String user = driverConfig.webRemoteDriverUser();
             String password = driverConfig.webRemoteDriverPassword();
             String url = String.format(driverConfig.webRemoteDriverUrl(), user, password);
