@@ -70,7 +70,7 @@ public class MainPageTests extends TestBase {
             open("https://selecty.ru/");
             $("#rec246587380 h3").shouldHave(text("IT АГЕНТСТВО"));
         });
-        step("check main page social media icons", () -> {
+        step("Проверяем наличие иконок на главной странице", () -> {
             $(".t-sociallinks__wrapper > div:first-child").isDisplayed();
             $(".t-sociallinks__wrapper > div:nth-child(2)").isDisplayed();
             $(".t-sociallinks__wrapper > div:last-child").isDisplayed();
@@ -89,7 +89,7 @@ public class MainPageTests extends TestBase {
             open("https://selecty.ru/");
             $("#rec246587380 h3").shouldHave(text("IT АГЕНТСТВО"));
         });
-        step("Проверяем наличие иконок соц.сетей на главной странице", () -> {
+        step("Проверяем наличие атрибутов у иконок соц.сетей", () -> {
             $(".t-sociallinks__wrapper > div:first-child").$("a").getAttribute("href").equals("https://www.facebook.com/selecty1/");
             $(".t-sociallinks__wrapper > div:nth-child(2)").$("a").getAttribute("href").equals("https://vk.com/selecty1");
             $(".t-sociallinks__wrapper > div:last-child").$("a").getAttribute("href").equals("https://www.instagram.com/selecty_hr/");
@@ -109,17 +109,17 @@ public class MainPageTests extends TestBase {
             open("https://selecty.ru/");
             $("#rec246587380 h3").shouldHave(text("IT АГЕНТСТВО"));
         });
-        step("click on chat icon", () -> {
+        step("Кликаем на иконку чата", () -> {
             $(".t708__btn").click();
         });
-        step("fill in form fields", () -> {
+        step("Заполняем поля формы", () -> {
             $(".t-input-block > input").setValue("test@mail.ru");
             $("input[autocomplete='name']").setValue("Test Name");
             $("textarea[name='Textarea']").setValue("Test message");
             $("button[type='submit']").click();
             Selenide.sleep(5);
         });
-        step("check successful message snded", () -> {
+        step("Проверяем отображение сообщения об успешной отправке", () -> {
             $(".t708__popup-container .js-successbox").shouldHave(text("Thank you! Your data has been submitted."));
         });
     }
